@@ -25,3 +25,6 @@
         | СистемаУправленияТребованиями  |   Запрос      | ТэгСвязи |
         | Redmine                        |    Issue      |    #     |
         | Jira                           |    Request    |    #     |
+		| Github                         |    Issue      |    #     |
+		| Bitbucket                      |    Issue      |    #     |
+		

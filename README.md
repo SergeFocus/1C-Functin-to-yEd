@@ -105,3 +105,4 @@ git pull --no-commit bootstrap master
 * структура в перспективе будет содержать и адаптацию семантики каталогов для проектов на проекте Graphite от компании 1С после появления официального стабильного релиза - пример текущего каталога из проекта Grathite можно посмотреть тут https://github.com/1C-Company/dt-demo-configuration/tree/master/DemoConfDT
 
 * для GitFlow в Windows мы советуем использовать программу SourceTree от компании Atlassian, для GitFlow в linux следует использовать расширение git-flow для git
+* для управления релизами мы используем [Семантическое версионирование](http://semver.org/lang/ru/)

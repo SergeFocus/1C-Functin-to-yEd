@@ -1,3 +1,3 @@
-### Каталог .graphite 
+### РљР°С‚Р°Р»РѕРі .graphite 
 
-Специализированные настройки для работы с Enterprise Developers Tools (codename: Graphite)
+РЎРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Рµ РЅР°СЃС‚СЂРѕР№РєРё РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ Enterprise Developers Tools (codename: Graphite)

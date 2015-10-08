@@ -23,8 +23,8 @@
 
  Примеры:
         | СистемаУправленияТребованиями  |   Запрос      | ТэгСвязи |
-        | Redmine                        |    Issue      |    #     |
-        | Jira                           |    Request    |    #     |
-		| Github                         |    Issue      |    #     |
-		| Bitbucket                      |    Issue      |    #     |
+        | http://redmine.org                        |    Issue      |    #     |
+        | http://jira.com                           |    Request    |    #     |
+		| https://github.com                         |    Issue      |    #     |
+		| https://bitbucket.com                      |    Issue      |    #     |
 		

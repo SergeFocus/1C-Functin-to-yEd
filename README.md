@@ -63,7 +63,7 @@ git-flow new-feature new-catalog-structure
 добавьте новый внешний репозиторий, как это указано выше
 
 ```Shell
-git remote set-url bootstrap https://github.com/silverbulleters/vanessa-bootstrap.git
+git remote add bootstrap https://github.com/silverbulleters/vanessa-bootstrap.git
 ```
 
 ~~~
@@ -71,6 +71,15 @@ git remote set-url bootstrap https://github.com/silverbulleters/vanessa-bootstra
 для этого используется файл .gitattributes в котором указано как файлы не объединять из основного репозитория с шаблоном
 ~~~
 
+текст файла .gitatrributes (конечно его надо предварительно создать в корне репозитория, а также обратите внимание - все эти файлы должны уже существовать в вашем репозитории)
+
+```
+README.md merge=ours
+.gitmodules merge=ours
+.gitignore merge=ours
+.gitattributes merge=ours
+LICENSE merge=ours
+```
 получите изменения из нового внешнего репозитория без применения изменений
 
 ```Shell
@@ -87,7 +96,14 @@ git config --local merge.ours.driver true
 ```Shell
 git pull --no-commit bootstrap master
 ```
+
 все изменения шаблона помещаются в таком случае как незафиксированные изменения, поэтому всегда можно откатиться в случае конфликтов файлов
+
+Для работы с именами файлов на русском, украинском, белорусском или на других языках не сипользующих латиницу в качестве алфавита, используйте следующю команду
+
+```Shell
+git config --local core.quotepath false
+```
 
 ### Возможности доработки шаблона
 

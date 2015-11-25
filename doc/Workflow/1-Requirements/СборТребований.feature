@@ -1,4 +1,4 @@
-﻿# encoding: utf-8
+# encoding: utf-8
 # language: ru
 
 
@@ -12,19 +12,17 @@
 	И в ней зафиксированы запросы от пользователей
 	И в ней зафиксированы мои заметки
 
-
 Структура сценария: Обработка требований из систем управления требованиями
 	Дано Существует <СистемаУправленияТребованиями>
 	Когда я получаю оповещение об <Запрос>
 	Тогда я открываю обработку ".\vendors\vanessa-bdd-editor"
 	И формулирую требования на языке Gherkin
 	И после сохранения помещаю изменения в git c помощью <ТэгСвязи> с <Запрос>
-	
+
 
  Примеры:
         | СистемаУправленияТребованиями  |   Запрос      | ТэгСвязи |
-        | http://redmine.org                        |    Issue      |    #     |
-        | http://jira.com                           |    Request    |    #     |
-		| https://github.com                         |    Issue      |    #     |
-		| https://bitbucket.com                      |    Issue      |    #     |
-		
+        | http://redmine.org             |    Issue      |    #     |
+        | http://jira.com                |    Request    |    #     |
+	    	| https://github.com             |    Issue      |    #     |
+  		  | https://bitbucket.com          |    Issue      |    #     |

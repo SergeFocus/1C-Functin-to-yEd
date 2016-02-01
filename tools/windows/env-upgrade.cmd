@@ -9,3 +9,6 @@ echo choco install sourcetree
 @choco upgrade pickles
 @choco upgrade picklesui
 @choco upgrade pandoc
+@choco upgrade irfanview
+echo Wainting for MSI for oscript.io
+echo choco upgrade oscript

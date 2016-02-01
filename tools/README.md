@@ -9,5 +9,6 @@
 * wget
 * msgit
 * Notepad++
+* allure
 
 для установки чеерез командную строку в Windows используется https://chocolatey.org 

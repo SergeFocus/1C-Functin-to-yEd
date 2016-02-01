@@ -6,3 +6,6 @@ echo Waiting for aproved https://chocolatey.org/packages/SourceTree, install ski
 echo choco install sourcetree
 @choco install python
 @choco install wget
+@choco install pickles
+@choco install picklesui
+@choco install pandoc

@@ -1,7 +1,7 @@
 @echo off
 cls
 @choco upgrade conemu -y
-@choco upgrade git -y -params '"/GitAndUnixToolsOnPath"'
+@choco upgrade git -y
 @choco upgrade notepadplusplus -y
 @choco upgrade sourcetree
 @choco upgrade python -y

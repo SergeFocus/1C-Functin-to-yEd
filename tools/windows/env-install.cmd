@@ -1,5 +1,6 @@
 @echo off
 cls
+@choco install conemu --force -y
 @choco install git --force -y -params '"/GitAndUnixToolsOnPath"'
 @choco install --force notepadplusplus -y
 echo Waiting for aproved https://chocolatey.org/packages/SourceTree, install skiped

@@ -3,9 +3,9 @@
 [![Join the chat at https://gitter.im/silverbulleters/vanessa-bootstrap](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/silverbulleters/vanessa-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 * содержит выработанную и обдуманную семантически структуру каталогов
-* содержит необходимые подмодули для быстрого старта
+* содержит необходимые утилиты для быстрого старта
 
-текущая версия **0.2.5.1**
+текущая версия **0.2.5.2**
 
 ### Порядок установки
 
@@ -15,7 +15,7 @@
 ```Shell
 git clone https://github.com/silverbulleters/vanessa-bootstrap.git <название-вашего-продукта-1С>
 ```
-* подключите репозиторий к своему git серверу (GitHub, Bitbucket, GitLab, etc)
+* подключите репозиторий к своему git серверу (Vanessa Git, GitHub, Bitbucket, GitLab, etc)
 
 ```Shell
 cd <название-вашего-продукта-1С>
@@ -31,12 +31,17 @@ git remote set-url bootstrap https://github.com/silverbulleters/vanessa-bootstra
 
 #### Порядок работы 1С специалиста
 
-* как настоящий 1С специалист новую конфигурацию подключите к Хранилищу 1С (если вы разрабатываете внешнюю обработку, этот пункт можете пропустить) 
-* настройте на своем CI-сервере выгрузку исходников из [Хранилища 1С](http://v8.1c.ru/overview/DeveloperGroupp.htm) в git репозиторий с помощью [Yet Another Unpack](https://github.com/silverbulleters/vanessa-unpack) - выгрузку лучше всего настроить в каталог .\src\configuration
+* как настоящий 1С специалист новую конфигурацию подключите к Хранилищу 1С (если вы разрабатываете внешнюю обработку, этот пункт можете пропустить)
+* настройте на своем CI-сервере выгрузку исходников из [Хранилища 1С](http://v8.1c.ru/overview/DeveloperGroupp.htm) в git репозиторий с помощью [Yet Another Unpack](https://github.com/silverbulleters/vanessa-unpack) - выгрузку лучше всего настроить в каталог .\src\cf
 * обратите внимание на проект [по исправлению артефактов 1С при выгрузке в исходники](https://github.com/pumbaEO/undiff1c/blob/master/src/undiff1c/undiff1c.py) - если вы видите странные изменения в xml файлах, значит необходимо описать пример в качестве запроса https://github.com/pumbaEO/undiff1c/issues, чтобы исключить проблемы выгрузки.
 * обратите внимание на наличие у вас интерпретатора python для работы с [precommit1C](https://github.com/pumbaEO/precommit1c) - конечная цель чтобы в каталоге src находились все epf файлы анаходящиеся в репозитории, только в виде исходников.
 * следите за обновлением шаблона
 * подпишитесь на изменения WiKi в виде RSS канала https://github.com/silverbulleters/vanessa-bootstrap/wiki.atom
+
+обратите внимание что:
+
+* существует проект [gitsync](https://github.com/EvilBeaver/oscript-library/tree/develop/src/gitsync) реализованный на [oscript.io](http://oscript.io/)
+* precommit1C на данный момент имеет версию как для Python, так и для **OScript** [precommit1C](https://github.com/xDrivenDevelopment/precommit1c/)
 
 ### Порядок обновления шаблона
 
@@ -93,7 +98,7 @@ git fetch bootstrap
 ```Shell
 git config --local merge.ours.driver true
 ```
-и получаем изменения шаблона 
+и получаем изменения шаблона
 
 ```Shell
 git pull --no-commit bootstrap master
@@ -110,25 +115,12 @@ git config --local core.quotepath false
 ### Возможности доработки шаблона
 
 * откройте issue - если вам не хватает кого-то каталога под ваши задачи
-* войдите в чат Gitter - чтобы задать дополнительные вопросы 
+* войдите в чат Gitter - чтобы задать дополнительные вопросы
 * сделайте fork, внесите изменения и выполните pull request с предлагаемыми вами изменениями (fork и pull request - это кнопки на GitHub.)
-
-~~~
-Важно !!!
-
-В структуре каталогов в ближайшее время НЕ будет каталога tests, это наша осознанная на данный момент позиция. По следующим причинам:
-
-* тестирование это процесс, для него мы используем каталог функциональности(./features) и каталог сценариев тестирования поведения (./features/**/steps_definitions)
-* каталог tests НЕ появится никогда, вместе него мы используем каталог spec - в нем хранятся фиксированные данные для проверки поведения, а также интеграционные сценарии проверки поведения
-* тесты для 1С опасное семантически понятие. Хочется покрывать тестами модули и функции. Но для быстрого старта и для быстрой пользы заказчику лучше покрывать тестами поведение, что плавно приводит нас к сценариям тестирования, или шагам сценариев, поэтому мы отказываемся от понятия unit-теста. Из нашей практики переход на feature файлы и steps_definitions позволяет второму разработчику на второй feature сократить на 40% время необходимое для реализации сценария тестирования. И это только за счёт перехода на другую концепцию﻿
-
-Если вы не согласны с этим - то тогда вам подойдёт какой-нибудь другой альтернативный проект.
-~~~
-
 
 ### Заметки на полях
 
-* структура содержит адаптацию семантики каталогов для проектов на проекте Graphite от компании 1С (пример текущего каталога из проекта Graphite можно посмотреть тут https://github.com/1C-Company/dt-demo-configuration/tree/master/DemoConfDT)
+* структура содержит адаптацию семантики каталогов для проектов на проекте Graphite от компании 1С (пример текущего каталога из проекта Graphite можно посмотреть тут https://github.com/1C-Company/dt-demo-configuration/tree/master/DemoConfDT
 
 * для GitFlow в Windows мы советуем использовать программу SourceTree от компании Atlassian, для GitFlow в linux следует использовать расширение git-flow для git
 

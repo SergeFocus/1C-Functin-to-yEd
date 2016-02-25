@@ -5,29 +5,13 @@
 * содержит выработанную и обдуманную семантически структуру каталогов
 * содержит необходимые утилиты для быстрого старта
 
-текущая версия **0.2.5.2**
+текущая версия **0.2.5.4**
 
 ### Порядок установки
 
 * прочитайте [Wiki](https://github.com/silverbulleters/vanessa-bootstrap/wiki/%D0%A0%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B0%D0%BC-1%D0%A1)
-* склонируйте репозиторий
-
-```Shell
-git clone https://github.com/silverbulleters/vanessa-bootstrap.git <название-вашего-продукта-1С>
-```
-* подключите репозиторий к своему git серверу (Vanessa Git, GitHub, Bitbucket, GitLab, etc)
-
-```Shell
-cd <название-вашего-продукта-1С>
-git remote set-url origin git://new.url.here
-```
-
-* не забудьте подписаться на обновление шаблона
-
-```Shell
-git remote set-url bootstrap https://github.com/silverbulleters/vanessa-bootstrap.git
-```
-теперь вы можете начинать разрабатывать по правильному и быть подписанными на любые изменения.
+* склонируйте репозиторий в любое место, чтобы изучить каждый каталог и его предназначение
+* не забудьте что git под Windows нужно устанавливать с git:bash интерпретатором
 
 #### Порядок работы 1С специалиста
 
@@ -43,74 +27,41 @@ git remote set-url bootstrap https://github.com/silverbulleters/vanessa-bootstra
 * существует проект [gitsync](https://github.com/EvilBeaver/oscript-library/tree/develop/src/gitsync) реализованный на [oscript.io](http://oscript.io/)
 * precommit1C на данный момент имеет версию как для Python, так и для **OScript** [precommit1C](https://github.com/xDrivenDevelopment/precommit1c/)
 
-### Порядок обновления шаблона
+### Порядок инсталяции и обновления шаблона
 
-включите стратегию слияния для текущего репозитория - чтобы изменения шаблона каталогов не мешали в вашем проекте тем изменениям, которые вы сделали в процессе реальной работы
+инсталятор и скрипт обновления представляет собой скрипт на `bash`, поэтому, необходимо выполнить следующие команды
 
-```Shell
-git config --local merge.ours.driver true
-```
-
-Чтобы получить изменения каталога, получите изменения, без фиксации:
+если еще нет репозитория `git`
 
 ```Shell
-git pull --no-commit bootstrap master
+echo "Эти команды нужно выполнить в командной строке"
+echo "для пользователей Windows используйте MSGIT:Bash (устанавливается вместе с MSGIT)"
+git init ./my-new-repo
+cd ./my-new-repo
+curl -o bootstrap.in-up.sh -sSL https://raw.githubusercontent.com/silverbulleters/vanessa-bootstrap/master/bootstrap.in-up.sh
+./bootstrap.in-up.sh
 ```
-
-все изменения шаблона помещаются в таком случае как незафиксированные изменения, поэтому всегда можно откатиться в случае конфликтов файлов
-
-### Если вы уже ведете разработку на 1С при помощи Git репозиториев
-
-создайте как это положено в **git-flow** отдельную тематическую ветку
+если репозиторий уже существует
 
 ```Shell
-git-flow new-feature new-catalog-structure
+echo "Эти команды нужно выполнить в командной строке"
+echo "для пользователей Windows используйте MSGIT:Bash (устанавливается вместе с MSGIT)"
+cd ./my-existing-repo
+curl -o bootstrap.in-up.sh -sSL https://raw.githubusercontent.com/silverbulleters/vanessa-bootstrap/master/bootstrap.in-up.sh
+./bootstrap.in-up.sh
 ```
 
-добавьте новый внешний репозиторий, как это указано выше
+обновление шаблона происходит автоматически, для этого достаточно запустить скачанный скрипт еще раз
 
 ```Shell
-git remote add bootstrap https://github.com/silverbulleters/vanessa-bootstrap.git
+echo "Эти команды нужно выполнить в командной строке"
+echo "для пользователей Windows используйте MSGIT:Bash (устанавливается вместе с MSGIT)"
+cd ./my-existing-repo-with-download-bootstrap
+echo "Обновляю BootStrap"
+./bootstrap.in-up.sh
 ```
 
-~~~
-здесь необходимо обратить внимание на функционал "Стратегий объединения" (merge strategies)
-для этого используется файл .gitattributes в котором указано как файлы не объединять из основного репозитория с шаблоном
-~~~
-
-текст файла .gitatrributes (конечно его надо предварительно создать в корне репозитория, а также обратите внимание - все эти файлы должны уже существовать в вашем репозитории)
-
-```
-README.md merge=ours
-.gitmodules merge=ours
-.gitignore merge=ours
-.gitattributes merge=ours
-LICENSE merge=ours
-```
-получите изменения из нового внешнего репозитория без применения изменений
-
-```Shell
-git fetch bootstrap
-```
-
-включите стратегию слияния для текущего репозитория - чтобы изменения шаблона каталогов не изменяли ваш проект
-
-```Shell
-git config --local merge.ours.driver true
-```
-и получаем изменения шаблона
-
-```Shell
-git pull --no-commit bootstrap master
-```
-
-все изменения шаблона помещаются в таком случае как незафиксированные изменения, поэтому всегда можно откатиться в случае конфликтов файлов
-
-Для работы с именами файлов на русском, украинском, белорусском или на других языках не сипользующих латиницу в качестве алфавита, используйте следующю команду
-
-```Shell
-git config --local core.quotepath false
-```
+откуда берется `curl` вы должны понять, если изучили каталог `.\tools\Windows` - ключевое слово для понимания `choco`
 
 ### Возможности доработки шаблона
 

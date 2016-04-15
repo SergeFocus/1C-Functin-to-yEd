@@ -16,6 +16,7 @@ echo choco upgrade oscript
 @choco upgrade sublimetext3 -y
 @choco upgrade atom -y
 @choco upgrade plantuml -y
+@choco upgrade chocolateygui -y
 
 echo addition cloud provider
 

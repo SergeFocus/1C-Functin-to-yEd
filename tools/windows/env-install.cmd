@@ -16,6 +16,7 @@ echo choco install oscript
 @choco install sublimetext3 -y
 @choco install atom -y
 @choco install plantuml -y
+@choco install chocolateygui -y
 
 echo addition cloud provider
 

@@ -1,0 +1,16 @@
+﻿@ECHO OFF
+
+echo Идет построение графа ....
+echo -o -T[ФорматФайла] [ТекстовыйФайл]
+
+[ПутьКПрограмме] [ИсходящийФайл] 
+if errorlevel 1 goto error
+
+start [ИсходящийФайл]
+goto end
+
+:error
+echo Произошла ошибка!
+pause
+
+:end

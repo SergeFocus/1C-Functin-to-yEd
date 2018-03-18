@@ -1,0 +1,9 @@
+﻿ba6a7c6e-96eb-4bcc-b976-e3e4e0bfc787-->und\ba6a7c6e-96eb-4bcc-b976-e3e4e0bfc787
+copyinfo-->und\copyinfo
+d39855c8-66ff-4c01-9237-21ef1084e8ca-->und\d39855c8-66ff-4c01-9237-21ef1084e8ca
+d39855c8-66ff-4c01-9237-21ef1084e8ca.0-->und\d39855c8-66ff-4c01-9237-21ef1084e8ca.0
+d78e9e79-b1e4-4504-ab55-76f5a4139a5c-->und\d78e9e79-b1e4-4504-ab55-76f5a4139a5c
+d78e9e79-b1e4-4504-ab55-76f5a4139a5c.0-->Form\Форма_
+root-->und\root
+version-->und\version
+versions-->und\versions

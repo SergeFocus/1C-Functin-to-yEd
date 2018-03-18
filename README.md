@@ -106,3 +106,9 @@
 
 P.S. Для установки Graphviz и yEd можно использовать скрипт
 `./tools/windows/env-install.cmd`
+
+## Дополнительно обработки: 
+
+КартаДвижений XGML-диаграммы для yEd.epf - [Генерация XGML-диаграммы движений документов для yEd](http://start1c.blogspot.com/2014/06/xgml-yed.html)
+
+GeneratorUML.epf - [Генерация UML диаграммы движений документов](http://start1c.blogspot.ru/2014/01/uml.html)

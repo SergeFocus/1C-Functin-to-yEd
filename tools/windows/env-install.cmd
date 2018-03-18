@@ -25,3 +25,10 @@ echo addition cloud provider
 @choco install docker-machine -y
 @choco install docker -y
 @choco install docker-compose -y
+
+@choco install freemind -y
+@choco install xmind -y
+@choco install yed -y
+@choco install plantuml -y
+@choco install markdownmonster -y
+@choco install graphviz -y
